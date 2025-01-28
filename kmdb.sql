@@ -115,8 +115,7 @@
 DROP TABLE IF EXISTS movie;
 DROP TABLE IF EXISTS studio;
 DROP TABLE IF EXISTS actor;
-DROP TABLE IF EXISTS characters; 
-
+DROP TABLE IF EXISTS characters;
 
 -- Create new tables, according to your domain model
 -- TODO!
@@ -132,6 +131,32 @@ DROP TABLE IF EXISTS characters;
 
 -- The SQL statement for the movies output
 -- TODO!
+CREATE TABLE movie(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    year INTEGER,
+    MPAA TEXT,
+    studio_id INTEGER
+);
+
+CREATE TABLE studio(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT
+);
+
+CREATE TABLE actor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor_name TEXT,
+    movie_id INTEGER
+);
+
+CREATE TABLE charac(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    charac_name TEXT,
+    actor_id INTEGER,
+    movie_id INTEGER
+);
+
 
 -- Prints a header for the cast output
 .print ""
